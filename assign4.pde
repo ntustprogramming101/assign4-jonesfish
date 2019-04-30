@@ -209,7 +209,7 @@ void draw() {
 		// > Remember to check if playerHealth is smaller than PLAYER_MAX_HEALTH!
     for(int i=0;i<6;i++){
       image(cabbage,cabbageX[i],cabbageY[i]);
-      if(playerX<cabbageX[i]+SOIL_SIZE&&playerX+groundhogIdle.width>cabbageX[i]&&playerY+groundhogDown.height>cabbageY[i]&&playerY<cabbageY[i]+SOIL_SIZE){
+      if(playerX<cabbageX[i]+SOIL_SIZE&&playerX+80>cabbageX[i]&&playerY+groundhogDown.height>cabbageY[i]&&playerY<cabbageY[i]+SOIL_SIZE){
       if(playerHealth<PLAYER_MAX_HEALTH){
         cabbageX[i]+=640;
         playerHealth++;
@@ -356,7 +356,7 @@ void draw() {
       soldierX[i]+=soldierSpeed;
       if(soldierX[i]>width){soldierX[i]=-80;}
       image(soldier,soldierX[i],soldierY[i]);
-      if(playerX<soldierX[i]+soldier.width&&playerX+groundhogIdle.width>soldierX[i]&&playerY+groundhogDown.height>soldierY[i]&&playerY<soldierY[i]+soldier.height){      
+      if(playerX<soldierX[i]+80&&playerX+80>soldierX[i]&&playerY+groundhogDown.height>soldierY[i]&&playerY<soldierY[i]+soldier.height){      
       // Initialize player
       soilHealth[4][0]=15;
       playerX = PLAYER_INIT_X;
@@ -388,7 +388,7 @@ void draw() {
 
 		// Health UI
       for(int i=0;i<playerHealth;i++){
-      image(life,10+(life.width+20)*i,10);
+      image(life,10+(30+20)*i,10);
       }
     //lose
     if(playerHealth<=0){gameState=GAME_OVER;}
